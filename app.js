@@ -10,13 +10,17 @@ app.get("/test", (req, res, next) => {
     res.send("This is a little test");
 })
 
-app.get("sensors", (req, res, next) => {
+app.get("/sensors", (req, res, next) => {
     res.json({
         sensors: [
             {name: "temperature", unit: "°C"},
             {name: "Humidity", unit: "%"}
         ]
     })
+})
+
+app.get("/date", (req, res, next) => {
+    res.send(Date.now().toLocaleString());
 })
 
 export default app;
